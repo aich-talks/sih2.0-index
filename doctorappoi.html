@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocConnect - Book Your Doctor Appointment</title>
+    <link rel="stylesheet" href="doctorappoi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DocConnect</h1>
+            <nav>
+                <button class="btn btn-ghost">Home</button>
+                <button class="btn btn-ghost">About</button>
+                <button class="btn btn-ghost">Contact</button>
+            </nav>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <button class="btn btn-outline">Specialty: All</button>
+                <button class="btn btn-outline">Time: All</button>
+            </div>
+            <button class="btn btn-primary" id="view-bookings">View Bookings</button>
+        </div>
+
+        <div class="doctor-grid">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Dr. John Doe</h2>
+                    <p>Cardiology</p>
+                </div>
+                <div class="card-content">
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Online & Offline</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-full">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Dr. Jane Smith</h2>
+                    <p>Dermatology</p>
+                </div>
+                <div class="card-content">
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>10:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <span>Online Only</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-full">Book Appointment</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Dr. Mike Johnson</h2>
+                    <p>Pediatrics</p>
+                </div>
+                <div class="card-content">
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <span>8:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="info-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Offline Only</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-full">Book Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="bookings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Bookings</h2>
+                <p>Here are your current bookings:</p>
+            </div>
+            <div class="modal-body">
+                <div class="booking-item">
+                    <p class="booking-doctor">Dr. John Doe</p>
+                    <p class="booking-specialty">Cardiology</p>
+                    <p class="booking-datetime">2023-06-15 at 10:00 AM</p>
+                </div>
+                <div class="booking-item">
+                    <p class="booking-doctor">Dr. Jane Smith</p>
+                    <p class="booking-specialty">Dermatology</p>
+                    <p class="booking-datetime">2023-06-16 at 2:00 PM</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
